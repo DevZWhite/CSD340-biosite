@@ -1,0 +1,575 @@
+/* ============================================================
+Description: CSD340-biosite/style.css
+Author: Zachary White
+Instructor: Sue Sampson 
+bioSite — Russell
+style.css
+Design: Dark Rustic / Music-Inspired
+============================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f5f0e8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #c9972a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f5f0e8;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #a07830;
+}
+
+/* ── Typography ───────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #f5f0e8;
+  letter-spacing: 0.08em;
+}
+
+h2 {
+  font-size: 1.9rem;
+  color: #c9972a;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+  color: #c9972a;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #f5f0e8;
+}
+
+/* ── Layout Containers ────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  padding: 4rem 0;
+  background-color: #222222;
+}
+
+/* ── Navigation ───────────────────────────────────────── */
+.site-nav {
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #8b3a1e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav-brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  color: #c9972a;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.nav-brand:hover {
+  color: #f5f0e8;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  color: #f5f0e8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #c9972a;
+  border-bottom-color: #c9972a;
+  text-decoration: none;
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background-color: #8b3a1e;
+  color: #f5f0e8;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #a84520;
+  color: #f5f0e8;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #c9972a;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.7rem;
+  border-radius: 2px;
+  border: 1px solid #c9972a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #c9972a;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+/* ── Hero Section ─────────────────────────────────────── */
+
+/* I want the hero section to have the img behind the text and the text to be centered and have a dark overlay on the image so that the text is readable. I also want the image to expand the entire section */
+.hero {
+  background-color: #111111;
+  border-bottom: 3px solid #8b3a1e;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  min-height: 400px; /* ensures image has room to expand into */
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* no opacity here — keep the image full strength */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* tune darkness here */
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 3;
+  color: #ffffff; /* make sure text has an explicit light color */
+}
+
+.hero-subtitle {
+  color: #c9972a;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid #c9972a;
+  margin: 1rem 0;
+  opacity: 0.4;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #2e2e2e;
+  border-left: 4px solid #c9972a;
+  border-radius: 2px;
+  padding: 1.5rem;
+}
+
+.card-image {
+  /* fixed/static dimensions so images do not scale with page */
+  width: 300px;
+  height: 190px;
+  background-color: #1a1a1a;
+  border: 2px solid #c9972a;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Ensure images fill the card image box */
+.card-image img {
+  /* enforce fixed image size and prevent scaling */
+  width: 300px;
+  height: 186px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0;
+}
+
+/* ── Pull Quote ───────────────────────────────────────── */
+.pull-quote {
+  border-left: 4px solid #8b3a1e;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem 0;
+  background-color: #222222;
+}
+
+.pull-quote p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #c9972a;
+  margin-bottom: 0;
+}
+
+/* ── Page Banner ──────────────────────────────────────── */
+.page-banner {
+  background-color: #111111;
+  border-bottom: 3px solid #8b3a1e;
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+}
+
+.page-banner h1 {
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+
+.page-banner p {
+  color: #c9972a;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+/* ── About Page Layout ────────────────────────────────── */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.portrait-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+}
+
+.portrait-caption {
+  color: #4a5568;
+  font-size: 0.8rem;
+  font-style: italic;
+  align-self: center;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+}
+
+.portrait img {
+  width: 300px;
+  height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #c9972a;
+}
+
+.bio-text h2 {
+  margin-bottom: 1rem;
+}
+
+/* ── Bio Paragraph Lines (placeholder) ───────────────── */
+.bio-block p {
+  max-width: 720px;
+}
+
+/* ── Hobbies Page ─────────────────────────────────────── */
+.featured-section {
+  padding: 0;
+}
+
+.featured-image {
+  width: 1025px;
+  height: 500px;
+  background-color: #2e2e2e;
+  border: 1px dashed #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-image img {
+  /* enforce fixed image size and prevent scaling */
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.featured-body {
+  padding: 2.5rem 0;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hobby-card {
+  background-color: #2e2e2e;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hobby-card-image {
+  width: 330px;
+  height: 190px;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #8b3a1e;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hobby-card-image img {
+  width: 330px;
+  height: 186px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.hobby-card-image2 img {
+  width: 330px;
+  height: 230px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  transform: translateY(-225px);
+  overflow: visible !important;
+  border-radius: 2px;
+}
+
+.hobby-card-image3 img {
+  width: 330px;
+  height: 186px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.hobby-card-body {
+  padding: 1.25rem;
+}
+
+.hobby-card-body p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0;
+}
+
+/* ── External Link Block ──────────────────────────────── */
+.external-link-block {
+  background-color: #2e2e2e;
+  border: 1px solid #4a5568;
+  border-radius: 2px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.external-link-block p {
+  margin-bottom: 0;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.site-footer {
+  background-color: #111111;
+  border-top: 2px solid #2e2e2e;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-brand {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #c9972a;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-nav a {
+  color: #4a5568;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #c9972a;
+  text-decoration: none;
+}
+
+.footer-copy {
+  color: #4a5568;
+  font-size: 0.75rem;
+}
+
+/* ── Section Heading Style ────────────────────────────── */
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+  color: #aaa;
+  font-size: 0.95rem;
+  max-width: 600px;
+}

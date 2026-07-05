@@ -1,2 +1,5 @@
-# CSD340-biosite
-A website dedicated to my dad.
+# Web Development with HTML and CSS.
+
+## Contributors
+  - Developer: Zachary White
+  - Instructor: Sue Sampson
