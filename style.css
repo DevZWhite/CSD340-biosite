@@ -772,7 +772,9 @@ p {
   }
 
   .portrait-wrapper {
-    margin-right: 0;
+    object-position: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* -- External Link Block -- */
